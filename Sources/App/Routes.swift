@@ -18,8 +18,17 @@ extension Droplet {
             return req.description
         }
 
-        get("description") { req in return req.description }
+        get("description") { req in
+            return req.description
+        }
         
+        //Route for ALL Posts
         try resource("posts", PostController.self)
+        //resource("posts", PostController())
+        /*get("/posts") { req in
+            let json = try Post.all().makeJSON()
+            return json
+         }*/
+        
     }
 }
